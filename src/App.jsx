@@ -11,9 +11,9 @@ import NotFound from './pages/NotFound';
 
 // Global styles - AirLume Redesign
 import './styles/global.css';
-import './styles/layout.css';
+import './styles/Layout.css';
 import './styles/navbar.css';
-import './styles/buttons.css';
+import './styles/Buttons.css';
 import './styles/cards.css';
 import './styles/forms.css';
 import './styles/hero.css';
