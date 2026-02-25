@@ -1,0 +1,161 @@
+/* ============================================
+   Proctor.css — Proctoring Overlay & Warnings
+   ============================================ */
+
+/* Violation warning overlay */
+.proctor-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9000;
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.25s ease;
+}
+
+.proctor-warning-card {
+    background: rgba(20, 10, 40, 0.95);
+    border: 2px solid var(--warning-color);
+    border-radius: var(--radius-xl);
+    padding: 48px 40px;
+    text-align: center;
+    max-width: 480px;
+    width: 90%;
+    box-shadow: 0 0 60px rgba(255, 183, 3, 0.25), var(--shadow-strong);
+    animation: shakeWarning 0.5s ease;
+}
+
+.proctor-warning-card.final-warning {
+    border-color: var(--error-color);
+    box-shadow: 0 0 60px rgba(255, 77, 109, 0.35), var(--shadow-strong);
+}
+
+.proctor-warning-icon {
+    font-size: 3.5rem;
+    margin-bottom: 16px;
+    display: block;
+    animation: bounceIn 0.4s ease;
+}
+
+.proctor-warning-card h2 {
+    color: var(--warning-color);
+    margin-bottom: 12px;
+    font-size: 1.5rem;
+}
+
+.proctor-warning-card.final-warning h2 {
+    color: var(--error-color);
+}
+
+.proctor-warning-card p {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.proctor-violation-count {
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(255, 183, 3, 0.15);
+    border: 1px solid rgba(255, 183, 3, 0.4);
+    border-radius: 50px;
+    color: var(--warning-color);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.proctor-violation-count.danger {
+    background: rgba(255, 77, 109, 0.15);
+    border-color: rgba(255, 77, 109, 0.4);
+    color: var(--error-color);
+}
+
+/* Auto-submit countdown inside warning */
+.proctor-submit-countdown {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 16px;
+}
+
+.proctor-submit-countdown span {
+    color: var(--error-color);
+    font-weight: 700;
+}
+
+/* Violation badge in exam header */
+.violation-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    background: rgba(255, 183, 3, 0.12);
+    border: 1px solid rgba(255, 183, 3, 0.3);
+    color: var(--warning-color);
+}
+
+.violation-badge.danger {
+    background: rgba(255, 77, 109, 0.15);
+    border-color: rgba(255, 77, 109, 0.4);
+    color: var(--error-color);
+}
+
+/* User-select none during exam */
+.no-select {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+@keyframes shakeWarning {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    15% {
+        transform: translateX(-10px);
+    }
+
+    30% {
+        transform: translateX(10px);
+    }
+
+    45% {
+        transform: translateX(-8px);
+    }
+
+    60% {
+        transform: translateX(8px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    90% {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,232 @@
+/* ============================================
+   Exam.css — Exam Page Layout & Question Styles
+   ============================================ */
+
+/* Exam layout */
+.exam-layout {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 24px;
+    align-items: start;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 24px;
+}
+
+.exam-main {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.exam-sidebar {
+    position: sticky;
+    top: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+@media (max-width: 840px) {
+    .exam-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .exam-sidebar {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+}
+
+/* Exam header */
+.exam-header {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.exam-header-info h2 {
+    margin-bottom: 4px;
+    font-size: 1.2rem;
+}
+
+.exam-header-info p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.exam-header-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Student name gate */
+.exam-gate {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+}
+
+.exam-gate-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px);
+    border: 1px solid var(--glass-border-strong);
+    border-radius: var(--radius-xl);
+    padding: 48px 40px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: var(--shadow-strong);
+    text-align: center;
+}
+
+.exam-gate-card .gate-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.exam-gate-card h1 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.exam-gate-card p {
+    color: var(--text-muted);
+    margin-bottom: 32px;
+}
+
+.exam-rules {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    text-align: left;
+    margin-bottom: 28px;
+}
+
+.exam-rules h4 {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.exam-rules ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.exam-rules ul li {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.exam-rules ul li::before {
+    content: '→';
+    color: var(--neon-green);
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+
+.exam-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 20px 0 8px;
+}
+
+/* Section progress */
+.section-progress {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    padding: 16px;
+}
+
+.section-progress-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 10px;
+}
+
+.progress-bar-wrap {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    height: 6px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--neon-green), #a8d900);
+    border-radius: 100px;
+    transition: width 0.4s ease;
+}
+
+.progress-text {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: right;
+}
+
+/* Question navigator grid */
+.question-nav-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+}
+
+.q-nav-dot {
+    aspect-ratio: 1;
+    border-radius: 7px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--glass-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.q-nav-dot:hover {
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.q-nav-dot.answered {
+    background: rgba(198, 255, 0, 0.15);
+    border-color: rgba(198, 255, 0, 0.4);
+    color: var(--neon-green);
+}
+
+.q-nav-dot.current {
+    background: var(--neon-green);
+    border-color: var(--neon-green);
+    color: #0a1a00;
+}

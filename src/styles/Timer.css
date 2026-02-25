@@ -1,0 +1,143 @@
+/* ============================================
+   Timer.css — Countdown Timer Component
+   ============================================ */
+
+.timer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.timer-ring-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.timer-ring {
+    transform: rotate(-90deg);
+    width: 100px;
+    height: 100px;
+}
+
+.timer-ring-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 6;
+}
+
+.timer-ring-progress {
+    fill: none;
+    stroke-width: 6;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1s linear, stroke 0.5s ease;
+    stroke: var(--neon-green);
+}
+
+.timer-ring-progress.warning {
+    stroke: var(--warning-color);
+    filter: drop-shadow(0 0 6px rgba(255, 183, 3, 0.6));
+}
+
+.timer-ring-progress.danger {
+    stroke: var(--error-color);
+    filter: drop-shadow(0 0 6px rgba(255, 77, 109, 0.6));
+    animation: timerPulse 1s ease-in-out infinite;
+}
+
+.timer-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.timer-digits {
+    font-size: 1.3rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--text-primary);
+    font-variant-numeric: tabular-nums;
+}
+
+.timer-digits.warning {
+    color: var(--warning-color);
+}
+
+.timer-digits.danger {
+    color: var(--error-color);
+    animation: timerPulse 1s ease-in-out infinite;
+}
+
+.timer-label {
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+.timer-status-text {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+@keyframes timerPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.55;
+    }
+}
+
+/* Compact linear timer bar (optional fallback) */
+.timer-bar-wrap {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    height: 6px;
+    overflow: hidden;
+}
+
+.timer-bar-fill {
+    height: 100%;
+    background: var(--neon-green);
+    border-radius: 100px;
+    transition: width 1s linear, background 0.5s ease;
+}
+
+.timer-bar-fill.warning {
+    background: var(--warning-color);
+}
+
+.timer-bar-fill.danger {
+    background: var(--error-color);
+}
+
+/* Timer panel card (used in exam sidebar) */
+.timer-panel {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.timer-panel-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+}

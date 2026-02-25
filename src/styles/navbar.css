@@ -1,0 +1,46 @@
+.navbar {
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    /* clean light separation */
+    border-radius: 50px;
+    /* extremely rounded like capsules */
+    padding: 14px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.25rem;
+    font-weight: 800;
+    /* Bolder logo text */
+    color: #111827;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.navbar-logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    /* circular logo */
+    background: #f59e0b;
+    /* Golden brand color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: #111827;
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
