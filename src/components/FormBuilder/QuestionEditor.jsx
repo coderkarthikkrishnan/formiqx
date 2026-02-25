@@ -49,7 +49,9 @@ export default function QuestionEditor({
             style={{
                 opacity: isDragged ? 0.4 : 1,
                 transform: isDragged ? 'scale(0.98)' : 'scale(1)',
-                transition: 'opacity 0.2s, transform 0.2s'
+                transition: 'opacity 0.2s, transform 0.2s',
+                position: 'relative',
+                zIndex: isDragged ? 1000 : (1000 - index)
             }}
         >
             {/* Header row */}
